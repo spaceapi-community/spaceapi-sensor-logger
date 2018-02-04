@@ -1,0 +1,7 @@
+{
+    "influxdb_host": "example.com",
+    "influxdb_port": 8086,
+    "influxdb_user": "user",
+    "influxdb_pass": "pass",
+    "influxdb_db": "datapoints"
+}
