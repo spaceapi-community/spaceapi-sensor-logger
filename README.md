@@ -1,4 +1,4 @@
-# SpaceAPI Sensor Logger
+# SpaceAPI InfluxDB Sensor Logger
 
 A Python 3 script to relay sensor values from a SpaceAPI endpoint to an
 InfluxDB instance so it can be viewed in Grafana.
