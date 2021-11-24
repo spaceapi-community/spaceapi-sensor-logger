@@ -26,6 +26,20 @@ After installing the requirements from `requirements.txt`, just run `python3
 relay.py <endpoint-url>` regularly :)
 
 
+## Docker
+
+The repository provides a `Dockerfile` that calls `relay.py` in a loop.
+Configure it using the following env vars:
+
+- `INFLUXDB_HOST`
+- `INFLUXDB_PORT`
+- `INFLUXDB_USER`
+- `INFLUXDB_PASS`
+- `INFLUXDB_DB`
+- `SPACEAPI_ENDPOINT`
+- `RELAY_INTERVAL_SECONDS`
+
+
 ## License
 
 Licensed under either of
