@@ -1,0 +1,6 @@
+Dockerfile
+.dockerignore
+venv/
+.git/
+.mypy_cache/
+config.json
