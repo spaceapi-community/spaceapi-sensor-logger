@@ -28,6 +28,7 @@ jobs:
           docker build \
             --no-cache \
             -t spaceapi/influxdb-sensor-logger:latest \
+            -t spaceapi/influxdb-sensor-logger:v1 \
             .
       - name: Push Docker image
         run: |
