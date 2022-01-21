@@ -24,7 +24,7 @@ def query_spaceapi(endpoint: str) -> Optional[dict]:
     if 'api' not in data or 'space' not in data:
         print('Endpoint response does not look like a valid SpaceAPI object')
         sys.exit(2)
-    return data.get('sensors', [])
+    return data.get('sensors', {})
 
 
 def make_datapoint(name: str, value: float, tags: Dict[str, str]):
