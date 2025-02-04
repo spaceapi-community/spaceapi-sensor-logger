@@ -1,6 +1,6 @@
 # SpaceAPI InfluxDB Sensor Logger
 
-[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/spaceapi/influxdb-sensor-logger/latest)](https://hub.docker.com/r/spaceapi/influxdb-sensor-logger)
+[![Docker Image][docker-image-badge]][docker-image]
 
 A Python 3 script to relay sensor values from a SpaceAPI endpoint to an
 InfluxDB instance so it can be viewed in Grafana.
@@ -41,7 +41,7 @@ Configure it using the following env vars:
 - `SPACEAPI_ENDPOINT`
 - `RELAY_INTERVAL_SECONDS`
 
-The image is published at [docker.io/spaceapi/influxdb-sensor-logger](https://hub.docker.com/r/spaceapi/influxdb-sensor-logger).
+The image is published at [ghcr.io/spaceapi-community/spaceapi-sensor-logger](https://ghcr.io/spaceapi-community/spaceapi-sensor-logger).
 
 
 ## License
@@ -60,3 +60,6 @@ Unless you explicitly state otherwise, any contribution intentionally
 submitted for inclusion in the work by you, as defined in the Apache-2.0
 license, shall be dual licensed as above, without any additional terms or
 conditions.
+
+[docker-image]: https://ghcr.io/spaceapi-community/spaceapi-sensor-logger
+[docker-image-badge]: https://img.shields.io/badge/container%20image-ghcr.io/spaceapi-community/spaceapi-sensor-logger-blue.svg
