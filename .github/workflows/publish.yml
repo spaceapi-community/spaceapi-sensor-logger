@@ -1,26 +1,18 @@
 on:
   push:
+    branches:
+      - master
+      - chore-ghcr
   schedule:
     - cron: '30 3 * * 2'
 
-name: CI
+name: Publish
 
 jobs:
-
-  docker-build:
-    name: Build Docker image
-    runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/master'
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build Docker image
-        run: |
-          docker build -t ghcr.io/spaceapi-community/spaceapi-sensor-logger:latest .
 
   docker-publish:
     name: Publish Docker image
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v4
       - name: Build Docker image
