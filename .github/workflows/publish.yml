@@ -1,0 +1,33 @@
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '30 3 * * 2'
+
+name: Publish
+
+jobs:
+
+  docker-publish:
+    name: Publish Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image
+        run: |
+          docker build \
+            --no-cache \
+            -t ghcr.io/spaceapi-community/spaceapi-sensor-logger:latest \
+            -t ghcr.io/spaceapi-community/spaceapi-sensor-logger:v1 \
+            --label "org.opencontainers.image.source=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" \
+            .
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push Docker image
+        run: |
+          docker push -a ghcr.io/spaceapi-community/spaceapi-sensor-logger
